@@ -13,8 +13,10 @@ const app = express();
 app.use(express.json());
 
 app.use((req, res, next) => {
-    res.json({ mssg: 'Welcome Api' });
-  });
+  console.log(req.method, req.path);
+  next(); 
+});
+
   
 app.use('/api/workouts', workoutRoutes)
 
@@ -22,7 +24,7 @@ app.use('/api/workouts', workoutRoutes)
 mongoose.connect(process.env.MONGO_URI)
 .then(() => {
 app.listen(process.env.PORT, () => {
-    console.log('Connected db and Server is running port 3000', process.env.PORT);
+    console.log('Connected db and Server is running port', process.env.PORT);
 })
 })
 .catch((error) => {
