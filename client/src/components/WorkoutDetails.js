@@ -1,5 +1,5 @@
 import React from 'react'
-import useWorkoutContext from '../hooks/useWorkoutContext';
+import useWorkoutContext from '../hooks/useAuthContext';
 
 import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 
